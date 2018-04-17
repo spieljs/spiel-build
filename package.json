@@ -1,0 +1,17 @@
+{
+  "name": "spiel-build",
+  "version": "1.0.0",
+  "description": "router builder for diferents framworks",
+  "main": "lib/src/index.js",
+  "repository": "git@github.com:spieljs/spiel-build.git",
+  "author": "Francisco Jesus spieljs@gmail.com",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@types/navigo": "^7.0.1",
+    "navigo": "^7.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^2.8.1"
+  }
+}
