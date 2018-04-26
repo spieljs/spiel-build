@@ -1,8 +1,9 @@
 {
   "name": "spiel-build",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "router builder for diferents framworks",
   "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "repository": "git@github.com:spieljs/spiel-build.git",
   "author": "Francisco Jesus spieljs@gmail.com",
   "license": "MIT",

@@ -1,8 +1,13 @@
 # spiel-build
-Router builder for diferents framworks
+
+[![Travis CI](https://travis-ci.org/spieljs/spiel-build.svg?branch=master)](https://travis-ci.org/spieljs/spiel-build)
+[![npm](https://img.shields.io/npm/v/spiel-build.svg)](https://www.npmjs.org/package/spiel-build)
+
+
+Router builder for diferents framworks based in states
 
 ## Api documentation
-
+* [Spiel Build](https://spieljs.github.io/spiel-build/)
 
 ## How build your own router builder
 
