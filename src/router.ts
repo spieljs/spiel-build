@@ -15,6 +15,12 @@ export class Router {
         return this;
     }
 
+    /**
+     * @param routes array with every route
+     * @param builder the function to build the page of every route
+     * @param parentPath the route parent path
+     * @param rootElement the parent dom element where every route builds its page dom structure
+     */
     public build<Route extends IRoutes>(routes: Route[],
                                         builder: (route: Route, params: object, query: string,
                                                   rootElement?: Element) => void,

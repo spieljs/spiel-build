@@ -1,9 +1,6 @@
 # spiel-build
 Router builder for diferents framworks
 
-## Api documentation
-
-
 ## How build your own router builder
 
 ### First instance the Router class:
@@ -100,4 +97,4 @@ export const exampleBuilder = new ExampleBuilder();
 * `yarn test` or `npm test`
 
 ## License
-Spiel Builder is MIT licensed. See [license](LICENSE).
+Spiel Builder is MIT licensed. See [license](https://github.com/spieljs/spiel-build/blob/master/LICENSE).

@@ -25,4 +25,13 @@ describe("Builder", () => {
             done();
         }, 100);
     });
+
+    it("has to go to page3", (done) => {
+        exampleBuilder.builder.router.navigate("/page2/page3");
+        setTimeout(() => {
+            const title = document.getElementsByTagName("h1")[0];
+            expect(title.textContent).has.to.be.equal("page3");
+            done();
+        }, 100);
+    });
 });

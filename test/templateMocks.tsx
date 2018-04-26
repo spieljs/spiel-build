@@ -28,3 +28,17 @@ export const page2: IPage = {
         );
     },
 };
+
+export const page3: IPage = {
+    state: {
+        title: "page3",
+    },
+
+    view: (state: {title: string}) => {
+        return(
+            <div>
+                <h1>{state.title}</h1>
+            </div>
+        );
+    },
+};
