@@ -1,6 +1,20 @@
 export type Keys = string;
 export type Params = {[k in Keys]: any};
 
+export interface IGenericHooks {
+    /** Before to resolve the route
+     * @param done To execute when finish async operation with done()
+     * @param params Params of the path,
+     * @example: /user:id => params.id
+     */
+    before?(done: (suppress?: boolean) => void, params?: Params): void;
+    /** After resolving
+     * @param params Params of the path
+     * @example: /user:id => params.id
+     */
+    after?(params?: Params): void;
+}
+
 export interface IHooks {
     /** Before to resolve the route
      * @param done To execute when finish async operation with done()
@@ -35,5 +49,5 @@ export interface IRoutes {
     /** Add page childreen
      * @see <a href="_helpers_interfaces_.irouters.html">IRouters</a>
      */
-    routes?: Array<{[Route in keyof IRoutes] : any}>;
+    routes?: any;
 }
