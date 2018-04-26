@@ -43,6 +43,6 @@ module.exports = function(config) {
             output: 'full'
         },
 
-        singleRun: false
+        singleRun: true
     });
 }
