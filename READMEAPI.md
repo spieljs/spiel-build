@@ -1,5 +1,5 @@
 # spiel-build
-Router builder for diferents framworks based in states
+Router builder for different frameworks based in states
 
 ## How build your own router builder
 
