@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/spiel-build.svg)](https://www.npmjs.org/package/spiel-build)
 
 
-Router builder for diferents framworks based in states
+Router builder for different frameworks based in states
 
 ## Api documentation
 * [Spiel Build](https://spieljs.github.io/spiel-build/)
