@@ -83,6 +83,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_interfaces_.html#keys" class="tsd-kind-icon">Keys</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_interfaces_.html#params" class="tsd-kind-icon">Params</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_interfaces_.html#tbuild" class="tsd-kind-icon">TBuild</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,7 +97,7 @@
 					<div class="tsd-signature tsd-kind-icon">Keys<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/b0098d7/src/interfaces.ts#L1">interfaces.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/f4aed4b/src/interfaces.ts#L1">interfaces.ts:1</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -106,12 +107,90 @@
 					<div class="tsd-signature tsd-kind-icon">Params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/b0098d7/src/interfaces.ts#L2">interfaces.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/f4aed4b/src/interfaces.ts#L2">interfaces.ts:2</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+					<a name="tbuild" class="tsd-anchor"></a>
+					<h3>TBuild</h3>
+					<div class="tsd-signature tsd-kind-icon">TBuild<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/f4aed4b/src/interfaces.ts#L7">interfaces.ts:7</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Type for build router</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon">&lt;Route&gt;<span class="tsd-signature-symbol">(</span>routes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Route</span><span class="tsd-signature-symbol">[]</span>, builder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, parentPath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, rootElement<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-type-parameters-title">Type parameters</h4>
+										<ul class="tsd-type-parameters">
+											<li>
+												<h4>Route<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_.iroutes.html" class="tsd-signature-type">IRoutes</a></h4>
+											</li>
+										</ul>
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>routes: <span class="tsd-signature-type">Route</span><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+											<li>
+												<h5>builder: <span class="tsd-signature-type">function</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter-siganture">
+														<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>route<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Route</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rootElement<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+														</ul>
+														<ul class="tsd-descriptions">
+															<li class="tsd-description">
+																<h4 class="tsd-parameters-title">Parameters</h4>
+																<ul class="tsd-parameters">
+																	<li>
+																		<h5>route: <span class="tsd-signature-type">Route</span></h5>
+																	</li>
+																	<li>
+																		<h5>params: <span class="tsd-signature-type">object</span></h5>
+																	</li>
+																	<li>
+																		<h5>query: <span class="tsd-signature-type">string</span></h5>
+																	</li>
+																	<li>
+																		<h5><span class="tsd-flag ts-flagOptional">Optional</span> rootElement: <span class="tsd-signature-type">Element</span></h5>
+																	</li>
+																</ul>
+																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> parentPath: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> rootElement: <span class="tsd-signature-type">Element</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
 						</ul>
 					</div>
 				</section>
@@ -150,6 +229,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
 						<a href="_interfaces_.html#params" class="tsd-kind-icon">Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_interfaces_.html#tbuild" class="tsd-kind-icon">TBuild</a>
 					</li>
 				</ul>
 			</nav>

@@ -1,6 +1,15 @@
 export type Keys = string;
 export type Params = {[k in Keys]: any};
 
+/**
+ * Type for build router
+ */
+export type TBuild = <Route extends IRoutes>(routes: Route[],
+                                             builder: (route: Route, params: object, query: string,
+                                                       rootElement?: Element) => void,
+                                             parentPath?: string | null,
+                                             rootElement?: Element) => void;
+
 export interface IGenericHooks {
     /** Before to resolve the route
      * @param done To execute when finish async operation with done()
