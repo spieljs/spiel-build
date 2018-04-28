@@ -73,11 +73,11 @@
 <span class="hljs-keyword">const</span> builder = <span class="hljs-keyword">new</span> Router(configRouter.rootPath, configRouter.useHash, configRouter.hash);
 </code></pre>
 				<h3 id="after-call-the-build-method">After call the build method</h3>
-				<pre><code class="lang-typescript">builder.build(configRouter.routes, <span class="hljs-keyword">this</span>.setPatch, <span class="hljs-literal">null</span>, element);
+				<pre><code class="lang-typescript">builder.build(configRouter.routes, <span class="hljs-keyword">this</span>.setPatch, <span class="hljs-literal">null</span>, element, extraParams);
 </code></pre>
 				<h3 id="simple-example-with-ultradom-2">Simple example with Ultradom 2</h3>
 				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { h, patch, VNode } <span class="hljs-keyword">from</span> <span class="hljs-string">"ultradom"</span>;
-<span class="hljs-keyword">import</span> { IRoutes, Router } <span class="hljs-keyword">from</span> <span class="hljs-string">"spiel-builder"</span>;
+<span class="hljs-keyword">import</span> { IRoutes, Router } <span class="hljs-keyword">from</span> <span class="hljs-string">"../src"</span>;
 <span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">"./render"</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> Keys = <span class="hljs-built_in">string</span>;
@@ -93,8 +93,13 @@
     page: IPage;
 }
 
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IAdditionalSetting {
+    defaultProps: <span class="hljs-built_in">string</span>;
+}
+
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IConfigRouter {
     rootPath?: <span class="hljs-built_in">string</span>;
+    defaultProps?: <span class="hljs-built_in">string</span>;
     root?: <span class="hljs-built_in">string</span>;
     useHash?: <span class="hljs-built_in">boolean</span>;
     hash?: <span class="hljs-built_in">string</span>;
@@ -113,7 +118,7 @@
         <span class="hljs-keyword">const</span> element = <span class="hljs-keyword">this</span>.createRootElement();
 
         <span class="hljs-keyword">if</span> (configRouter.routes) {
-            <span class="hljs-keyword">this</span>.builder.build(configRouter.routes, <span class="hljs-keyword">this</span>.setPatch, <span class="hljs-literal">null</span>, element);
+            <span class="hljs-keyword">this</span>.builder.build(configRouter.routes, <span class="hljs-keyword">this</span>.setPatch, <span class="hljs-literal">null</span>, element, configRouter.defaultProps);
         }
 
         <span class="hljs-keyword">this</span>.builder.router.resolve();
@@ -135,13 +140,15 @@
         <span class="hljs-keyword">return</span> element;
     }
 
-    <span class="hljs-keyword">private</span> setPatch(route: IRoutesExample, params: object, query: <span class="hljs-built_in">string</span>, rootElement?: Element) {
+    <span class="hljs-keyword">private</span> setPatch(route: IRoutesExample, params: object, query: <span class="hljs-built_in">string</span>,
+                     rootElement?: Element, defaultProps?: <span class="hljs-built_in">string</span>) {
         <span class="hljs-keyword">const</span> page = route.page;
         <span class="hljs-keyword">const</span> state: State = {};
 
         <span class="hljs-built_in">Object</span>.assign(state, page.state);
         state.params = params;
         state.query = query;
+        state.defaultProps = defaultProps;
         render(page.view, state, rootElement);
     }
 }

@@ -14,14 +14,14 @@ const builder = new Router(configRouter.rootPath, configRouter.useHash, configRo
 ### After call the build method
 
 ```typescript
-builder.build(configRouter.routes, this.setPatch, null, element);
+builder.build(configRouter.routes, this.setPatch, null, element, extraParams);
 ```
 
 ### Simple example with Ultradom 2
 
 ```typescript
 import { h, patch, VNode } from "ultradom";
-import { IRoutes, Router } from "spiel-builder";
+import { IRoutes, Router } from "../src";
 import { render } from "./render";
 
 export type Keys = string;
@@ -37,8 +37,13 @@ export interface IRoutesExample extends IRoutes {
     page: IPage;
 }
 
+export interface IAdditionalSetting {
+    defaultProps: string;
+}
+
 export interface IConfigRouter {
     rootPath?: string;
+    defaultProps?: string;
     root?: string;
     useHash?: boolean;
     hash?: string;
@@ -57,7 +62,7 @@ export class ExampleBuilder {
         const element = this.createRootElement();
 
         if (configRouter.routes) {
-            this.builder.build(configRouter.routes, this.setPatch, null, element);
+            this.builder.build(configRouter.routes, this.setPatch, null, element, configRouter.defaultProps);
         }
 
         this.builder.router.resolve();
@@ -79,13 +84,15 @@ export class ExampleBuilder {
         return element;
     }
 
-    private setPatch(route: IRoutesExample, params: object, query: string, rootElement?: Element) {
+    private setPatch(route: IRoutesExample, params: object, query: string,
+                     rootElement?: Element, defaultProps?: string) {
         const page = route.page;
         const state: State = {};
 
         Object.assign(state, page.state);
         state.params = params;
         state.query = query;
+        state.defaultProps = defaultProps;
         render(page.view, state, rootElement);
     }
 }

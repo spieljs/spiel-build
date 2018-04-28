@@ -2,6 +2,7 @@ import { exampleBuilder, IConfigRouter} from "./builderSrc";
 import { page1, page2, page3} from "./templateMocks";
 
 export const configRouter: IConfigRouter = {
+    defaultProps: "Hello World",
     rootPath: "http://localhost:9876",
     routes: [
         {

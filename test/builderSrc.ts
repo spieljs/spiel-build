@@ -15,8 +15,13 @@ export interface IRoutesExample extends IRoutes {
     page: IPage;
 }
 
+export interface IAdditionalSetting {
+    defaultProps: string;
+}
+
 export interface IConfigRouter {
     rootPath?: string;
+    defaultProps?: string;
     root?: string;
     useHash?: boolean;
     hash?: string;
@@ -35,7 +40,7 @@ export class ExampleBuilder {
         const element = this.createRootElement();
 
         if (configRouter.routes) {
-            this.builder.build(configRouter.routes, this.setPatch, null, element);
+            this.builder.build(configRouter.routes, this.setPatch, null, element, configRouter.defaultProps);
         }
 
         this.builder.router.resolve();
@@ -57,13 +62,15 @@ export class ExampleBuilder {
         return element;
     }
 
-    private setPatch(route: IRoutesExample, params: object, query: string, rootElement?: Element) {
+    private setPatch(route: IRoutesExample, params: object, query: string,
+                     rootElement?: Element, defaultProps?: string) {
         const page = route.page;
         const state: State = {};
 
         Object.assign(state, page.state);
         state.params = params;
         state.query = query;
+        state.defaultProps = defaultProps;
         render(page.view, state, rootElement);
     }
 }

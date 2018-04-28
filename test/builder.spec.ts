@@ -12,7 +12,7 @@ describe("Builder", () => {
         exampleBuilder.builder.router.navigate("/page1");
         setTimeout(() => {
             const title = document.getElementsByTagName("h1")[0];
-            expect(title.textContent).has.to.be.equal("page1");
+            expect(title.textContent).has.to.be.equal("page1 Hello World");
             done();
         }, 100);
     });
@@ -21,7 +21,7 @@ describe("Builder", () => {
         exampleBuilder.builder.router.navigate("/page2");
         setTimeout(() => {
             const title = document.getElementsByTagName("h1")[0];
-            expect(title.textContent).has.to.be.equal("page2");
+            expect(title.textContent).has.to.be.equal("page2 Hello World");
             done();
         }, 100);
     });
@@ -30,7 +30,7 @@ describe("Builder", () => {
         exampleBuilder.builder.router.navigate("/page2/page3");
         setTimeout(() => {
             const title = document.getElementsByTagName("h1")[0];
-            expect(title.textContent).has.to.be.equal("page3");
+            expect(title.textContent).has.to.be.equal("page3 Hello World");
             done();
         }, 100);
     });

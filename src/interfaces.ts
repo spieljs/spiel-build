@@ -6,9 +6,10 @@ export type Params = {[k in Keys]: any};
  */
 export type TBuild = <Route extends IRoutes>(routes: Route[],
                                              builder: (route: Route, params: object, query: string,
-                                                       rootElement?: Element) => void,
+                                                       rootElement?: Element, extraParams?: any) => void,
                                              parentPath?: string | null,
-                                             rootElement?: Element) => void;
+                                             rootElement?: Element,
+                                             extraParams?: any) => void;
 
 export interface IGenericHooks {
     /** Before to resolve the route

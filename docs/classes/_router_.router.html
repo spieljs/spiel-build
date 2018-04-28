@@ -114,7 +114,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/ce5e358/src/router.ts#L5">router.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/0d888a4/src/router.ts#L5">router.ts:5</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -159,7 +159,7 @@
 					<div class="tsd-signature tsd-kind-icon">router<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Navigo</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/ce5e358/src/router.ts#L5">router.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/0d888a4/src/router.ts#L5">router.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -170,13 +170,13 @@
 					<a name="build" class="tsd-anchor"></a>
 					<h3>build</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">build&lt;Route&gt;<span class="tsd-signature-symbol">(</span>routes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Route</span><span class="tsd-signature-symbol">[]</span>, builder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, parentPath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, rootElement<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">build&lt;Route&gt;<span class="tsd-signature-symbol">(</span>routes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Route</span><span class="tsd-signature-symbol">[]</span>, builder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, parentPath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, rootElement<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Element</span>, extraParams<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/ce5e358/src/router.ts#L24">router.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/spieljs/spiel-build/blob/0d888a4/src/router.ts#L25">router.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -203,7 +203,7 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>route<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Route</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rootElement<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>route<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Route</span>, params<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_.html#params" class="tsd-signature-type">Params</a>, query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rootElement<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Element</span>, extraParams<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
@@ -213,13 +213,16 @@
 															<h5>route: <span class="tsd-signature-type">Route</span></h5>
 														</li>
 														<li>
-															<h5>params: <span class="tsd-signature-type">object</span></h5>
+															<h5>params: <a href="../modules/_interfaces_.html#params" class="tsd-signature-type">Params</a></h5>
 														</li>
 														<li>
 															<h5>query: <span class="tsd-signature-type">string</span></h5>
 														</li>
 														<li>
 															<h5><span class="tsd-flag ts-flagOptional">Optional</span> rootElement: <span class="tsd-signature-type">Element</span></h5>
+														</li>
+														<li>
+															<h5><span class="tsd-flag ts-flagOptional">Optional</span> extraParams: <span class="tsd-signature-type">any</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -238,6 +241,12 @@
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> rootElement: <span class="tsd-signature-type">Element</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the parent dom element where every route builds its page dom structure</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> extraParams: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Additional Params to allow add features to builder</p>
 									</div>
 								</li>
 							</ul>

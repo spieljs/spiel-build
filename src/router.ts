@@ -1,5 +1,5 @@
 import Navigo = require("navigo");
-import {IRoutes} from "./interfaces";
+import {IRoutes, Params} from "./interfaces";
 
 export class Router {
     public router: Navigo;
@@ -20,12 +20,14 @@ export class Router {
      * @param builder the function to build the page of every route
      * @param parentPath the route parent path
      * @param rootElement the parent dom element where every route builds its page dom structure
+     * @param extraParams Additional Params to allow add features to builder
      */
     public build<Route extends IRoutes>(routes: Route[],
-                                        builder: (route: Route, params: object, query: string,
-                                                  rootElement?: Element) => void,
+                                        builder: (route: Route, params: Params, query: string,
+                                                  rootElement?: Element, extraParams?: any) => void,
                                         parentPath?: string | null,
-                                        rootElement?: Element) {
+                                        rootElement?: Element,
+                                        extraParams?: any) {
         routes.forEach((route) => {
             if (parentPath) {
                 route.path = `${parentPath}${route.path}`;
@@ -34,17 +36,17 @@ export class Router {
             if (route.alias) {
                 this.router.on(route.path, {
                     as: route.alias, uses: (params, query) => {
-                        builder(route, params, query, rootElement);
+                        builder(route, params, query, rootElement, extraParams);
                     },
                 }, route.hooks);
             } else {
                 this.router.on(route.path, (params, query) => {
-                    builder(route, params, query, rootElement);
+                    builder(route, params, query, rootElement, extraParams);
                 }, route.hooks);
             }
 
             if (route.routes) {
-                this.build(route.routes, builder, route.path, rootElement);
+                this.build(route.routes, builder, route.path, rootElement, extraParams);
             }
         });
     }
